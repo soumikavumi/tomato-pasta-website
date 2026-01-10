@@ -1,0 +1,242 @@
+/* =========================================================
+   style.css
+   Shared styles for ALL pages.
+   Goal: professional, clean, beginner-friendly.
+   No inline CSS is used in any HTML file.
+   ========================================================= */
+
+/* ----- Basic reset (keeps spacing predictable) ----- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----- Page background + typography ----- */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+
+  /* Dark, modern gradient background */
+  background: linear-gradient(135deg, #0b1020, #111827 45%, #0f172a);
+  color: #e5e7eb;
+
+  min-height: 100vh;
+}
+
+/* A centered container to keep the layout clean */
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 18px 40px;
+}
+
+/* ----- Header / Title ----- */
+.site-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.site-title {
+  display: inline-block;
+  padding: 14px 18px;
+
+  /* "Nice border" around the centered title */
+  border: 1px solid rgba(229, 231, 235, 0.25);
+  border-radius: 14px;
+
+  /* Subtle background to lift the title */
+  background: rgba(17, 24, 39, 0.45);
+
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+}
+
+/* ----- Navigation ----- */
+.nav {
+  margin-top: 14px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #e5e7eb;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(229, 231, 235, 0.14);
+  background: rgba(17, 24, 39, 0.25);
+
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.nav a:hover {
+  background: rgba(17, 24, 39, 0.45);
+  border-color: rgba(229, 231, 235, 0.26);
+}
+
+/* Active page highlight (JS adds .active to the matching link) */
+.nav a.active {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(229, 231, 235, 0.35);
+}
+
+/* ----- Card layout (content area) ----- */
+.card {
+  margin-top: 18px;
+  padding: 20px;
+
+  border-radius: 16px;
+  border: 1px solid rgba(229, 231, 235, 0.12);
+
+  background: rgba(17, 24, 39, 0.40);
+  backdrop-filter: blur(6px);
+
+  text-align: left;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 650;
+}
+
+.text {
+  color: rgba(229, 231, 235, 0.92);
+  margin-bottom: 14px;
+}
+
+/* ----- Lists ----- */
+.list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.list li {
+  margin: 6px 0;
+}
+
+/* ----- Buttons (shared) ----- */
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(229, 231, 235, 0.18);
+  background: rgba(17, 24, 39, 0.35);
+  color: #e5e7eb;
+
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.btn:hover {
+  background: rgba(17, 24, 39, 0.55);
+  border-color: rgba(229, 231, 235, 0.30);
+}
+
+/* A helper class JS can toggle to hide/show content */
+.hidden {
+  display: none;
+}
+
+/* ----- Small "note" block ----- */
+.note {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(229, 231, 235, 0.10);
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.note-title {
+  font-weight: 650;
+  margin-bottom: 6px;
+}
+
+.note-text {
+  color: rgba(229, 231, 235, 0.9);
+}
+
+/* ----- Table (vitamins page) ----- */
+.table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.table th,
+.table td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.12);
+}
+
+.table th {
+  font-weight: 650;
+  background: rgba(17, 24, 39, 0.35);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ----- Comments UI ----- */
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1;
+  min-width: 220px;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(229, 231, 235, 0.18);
+  background: rgba(17, 24, 39, 0.25);
+  color: #e5e7eb;
+}
+
+.input::placeholder {
+  color: rgba(229, 231, 235, 0.55);
+}
+
+.comments-list {
+  margin-top: 14px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.comment-item {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(229, 231, 235, 0.10);
+  background: rgba(15, 23, 42, 0.28);
+  margin: 10px 0;
+}
+
+/* ----- Footer ----- */
+.footer {
+  text-align: center;
+  margin-top: 18px;
+  opacity: 0.9;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: rgba(229, 231, 235, 0.8);
+}
