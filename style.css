@@ -143,6 +143,35 @@ body {
   border-color: rgba(229, 231, 235, 0.30);
 }
 
+
+/* =========================================
+   Recipe image + credit
+   ========================================= */
+
+.image-wrapper {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.recipe-image {
+  width: 180px;        /* Small image */
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 14px;
+  border: 1px solid rgba(229, 231, 235, 0.2);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.image-credit {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: rgba(229, 231, 235, 0.65);
+}
+
+
+
 /* A helper class JS can toggle to hide/show content */
 .hidden {
   display: none;
